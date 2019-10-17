@@ -8,8 +8,8 @@ def render_main():
 
 @app.route("/response")
 def render_response():
-    favorite_color = request.args['colors'] #get user's input for color input
-    if favorite_color == "pink":
+    inches_yards = request.args['Metric'] #get user's input for color input
+    if inches_yards == "pink":
         response = "That's my favorite color, too!"
     else:
         response = "My favorite color is pink."
