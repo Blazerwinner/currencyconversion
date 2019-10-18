@@ -9,10 +9,10 @@ def render_main():
 @app.route("/response")
 def render_response():
     inches_yards = request.args['Metric'] #get user's input for color input
-    if inches_yards == "pink":
-        response = "That's my favorite color, too!"
+    if inches_yards == "":
+        response = ""
     else:
-        response = "My favorite color is pink."
+        response = ""
     return render_template('response.html', responsefromServer=response)
     
     
