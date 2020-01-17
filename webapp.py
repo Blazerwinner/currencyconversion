@@ -8,11 +8,11 @@ def render_main():
 
 @app.route("/response")
 def render_response():
-    inches_yards = request.args['Metric'] #get user's input for color input
+    inches_yards = request.args['Inches'] #get user's input for color input
     if inches_yards == "":
         response = ""
     else:
-        response = str(int(inches_yards)/36)
+        response = str(int(inches_yards)/36) + "Yards"
     return render_template('response.html', responseFromServer=response)
     
     
