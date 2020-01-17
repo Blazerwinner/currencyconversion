@@ -7,11 +7,11 @@ def render_main():
     return render_template('home.html')
     
 @app.route("/littogals")
-def render_main():
+def render_littogals():
     return render_template('littogals.html')
     
 @app.route("/ustocan")
-def render_main():
+def render_ustocan():
     return render_template('ustocan.html')
 
 @app.route("/response")
