@@ -10,7 +10,15 @@ def render_main():
 def render_response():
     inches_yards = request.args['Inches'] #get user's input for color input
     if inches_yards == "":
-        response = ""
+        liters = request.args['Liters']
+        if liters == "":
+            USD = request.args['USD']
+            if USD == "":
+                response = ""
+            else:
+               response = str(int(USD)*1.30) + "Can" 
+        else:
+            response = str(int(liters)/3.78541) + "Gallons"
     else:
         response = str(int(inches_yards)/36) + "Yards"
     return render_template('response.html', responseFromServer=response)
