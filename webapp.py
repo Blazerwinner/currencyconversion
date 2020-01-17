@@ -10,10 +10,10 @@ def render_main():
 def render_response():
     inches_yards = request.args['Metric'] #get user's input for color input
     if inches_yards == "":
-        response = "a"
+        response = ""
     else:
-        response = "b"
-    return render_template('response.html', responsefromServer=response)
+        response = str(int(inches_yards)/36)
+    return render_template('response.html', responseFromServer=response)
     
     
 if __name__=="__main__":
