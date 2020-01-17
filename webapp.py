@@ -12,7 +12,7 @@ def render_response():
     if inches_yards == "":
         response = ""
     else:
-        response = inches_yards/36
+        response = str(int(inches_yards)/36)
     return render_template('response.html', responsefromServer=response)
     
     
