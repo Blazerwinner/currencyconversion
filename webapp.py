@@ -22,11 +22,11 @@ def render_response():
         response = ""
     else:
         if unit == 'inches':
-            response = str(int(starting_value)/36) + "Yards"
+            response = str(float(starting_value)/36) + "Yards"
         if unit == 'liters':
-                response = str(int(starting_value)/3.78541) + "Gallons"
+                response = str(float(starting_value)/3.78541) + "Gallons"
         if unit == 'usd':
-                   response = str(int(starting_value)*1.30) + "Can" 
+                   response = str(float(starting_value)*1.30) + "Can" 
     return render_template('response.html', responseFromServer=response)
     
     
