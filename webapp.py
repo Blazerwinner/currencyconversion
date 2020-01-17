@@ -16,19 +16,17 @@ def render_ustocan():
 
 @app.route("/response")
 def render_response():
-    inches_yards = request.args['Inches'] #get user's input for color input
-    if inches_yards == "":
-        liters = request.args['Liters']
-        if liters == "":
-            USD = request.args['USD']
-            if USD == "":
-                response = ""
-            else:
-               response = str(int(USD)*1.30) + "Can" 
-        else:
-            response = str(int(liters)/3.78541) + "Gallons"
+    unit = request.args['unit'] #get user's input for color input
+    starting_value = request.args['starting_value']
+    if starting_value == "":
+        response = ""
     else:
-        response = str(int(inches_yards)/36) + "Yards"
+        if unit == 'inches':
+            response = str(int(starting_value)/36) + "Yards"
+        if unit == 'liters':
+                response = str(int(starting_value)/3.78541) + "Gallons"
+        if unit == 'usd':
+                   response = str(int(starting_value)*1.30) + "Can" 
     return render_template('response.html', responseFromServer=response)
     
     
